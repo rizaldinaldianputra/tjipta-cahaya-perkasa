@@ -2,7 +2,20 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a; /* Darker Navy for better contrast on white */
+  
+  /* TCP Brand Colors - Refined for Light Theme */
+  --tcp-navy: #1e293b;
+  --tcp-navy-dark: #0f172a;
+  --tcp-gold: #d97706; /* Slightly deeper gold for white contrast */
+  --tcp-gold-light: #fbbf24;
+  --tcp-silver: #f1f5f9;
+  --tcp-silver-light: #f8fafc;
+  
+  --primary: var(--tcp-navy);
+  --primary-foreground: #ffffff;
+  --secondary: var(--tcp-gold);
+  --secondary-foreground: #ffffff;
 }
 
 @theme inline {
@@ -10,17 +23,37 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  
+  --color-tcp-navy: var(--tcp-navy);
+  --color-tcp-navy-dark: var(--tcp-navy-dark);
+  --color-tcp-gold: var(--tcp-gold);
+  --color-tcp-gold-light: var(--tcp-gold-light);
+  --color-tcp-silver: var(--tcp-silver);
+  --color-tcp-silver-light: var(--tcp-silver-light);
+  
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --primary: var(--tcp-gold);
+    --primary-foreground: #0f172a;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+html {
+  scroll-behavior: smooth;
 }
