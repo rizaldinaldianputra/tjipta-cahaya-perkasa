@@ -27,11 +27,10 @@ export function Navbar() {
 
   return (
     <motion.header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white shadow-md py-3 border-b border-gray-100"
-          : "bg-white py-5 shadow-sm"
-      }`}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled
+        ? "bg-white shadow-md py-3 border-b border-gray-100"
+        : "bg-white py-5 shadow-sm"
+        }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
@@ -40,7 +39,7 @@ export function Navbar() {
         {/* Brand Logo */}
         <div className="flex items-center gap-3">
           <div className="relative w-12 h-12 overflow-hidden rounded-full border-2 border-tcp-gold flex items-center justify-center bg-white shadow-sm">
-             {/* Replace with actual logo.png once added by user */}
+            {/* Replace with actual logo.png once added by user */}
             <Image
               src="/logo.png"
               alt="TCP Logo"
@@ -53,7 +52,7 @@ export function Navbar() {
                 e.currentTarget.style.display = "none";
               }}
             />
-             <span className="absolute font-extrabold text-tcp-navy text-xl tracking-tighter">TCP</span>
+            <span className="absolute font-extrabold text-tcp-navy text-xl tracking-tighter">TCP</span>
           </div>
           <div className="flex flex-col text-tcp-navy">
             <span className="font-bold text-lg leading-tight tracking-wide">Tjipta Cahaya Perkasa</span>
@@ -67,9 +66,8 @@ export function Navbar() {
             <a
               key={link.name}
               href={link.href}
-              className={`text-sm font-bold uppercase tracking-widest transition-colors hover:text-tcp-gold ${
-                isScrolled ? "text-tcp-navy" : "text-tcp-navy md:text-gray-800"
-              }`}
+              className={`text-sm font-bold uppercase tracking-widest transition-colors hover:text-tcp-gold ${isScrolled ? "text-tcp-navy" : "text-tcp-navy md:text-gray-800"
+                }`}
             >
               {link.name}
             </a>
